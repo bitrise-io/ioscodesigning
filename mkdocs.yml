@@ -1,0 +1,34 @@
+site_name: 'iOS Code Signing'
+site_description: ''
+site_author: 'Bitrise'
+site_url: 'https://bitrise-io.github.io/ioscodesigning.github.io'
+
+repo_name: 'GitHub'
+repo_url: 'https://github.com/bitrise-io/ioscodesigning.github.io'
+
+copyright: 'The iOS Code Signing guide is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.'
+
+theme: 'material'
+
+pages:
+- Introduction: 'index.md'
+- Generate code signing files: 'generate-code-signing-files.md'
+- Exporting code signing files: 'exporting-code-signing-files.md'
+- Code signing iOS frameworks: 'code-signing-ios-frameworks.md'
+
+markdown_extensions:
+  - admonition
+  - toc(permalink=true)
+  - footnotes
+
+extra:
+  logo: 'images/logo.svg'
+  social:
+    - type: 'github'
+      link: 'https://github.com/bitrise-io/ioscodesigning.github.io'
+    - type: 'twitter'
+      link: 'https://twitter.com/'
+
+google_analytics:
+  - 'UA-XXXXXXXX-X'
+  - 'auto'
