@@ -15,6 +15,7 @@ pages:
 - Generate code signing files: 'generate-code-signing-files.md'
 - Exporting code signing files: 'exporting-code-signing-files.md'
 - Code signing iOS frameworks: 'code-signing-ios-frameworks.md'
+- robots.txt: 'robots.txt'
 
 markdown_extensions:
   - admonition
