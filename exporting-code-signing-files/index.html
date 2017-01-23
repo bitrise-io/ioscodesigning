@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Code signing is required for iOS apps when you are distributing your app to your testers or to the App Store. It assures that your app can be trusted and is known by Apple.">
+      
       
         <link rel="canonical" href="https://bitrise-io.github.io/ioscodesigning.github.io/exporting-code-signing-files/">
       
@@ -220,16 +222,63 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exporting-using-xcode-8" title="Exporting using Xcode 8" class="md-nav__link">
-    Exporting using Xcode 8
+  <a href="#exporting-with-codesigndoc" title="Exporting with codesigndoc" class="md-nav__link">
+    Exporting with codesigndoc
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#exporting-certificates" title="Exporting certificates" class="md-nav__link">
+    Exporting certificates
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-using-xcode" title="Exporting using Xcode" class="md-nav__link">
+    Exporting using Xcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exporting-manually" title="Exporting manually" class="md-nav__link">
     Exporting manually
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-provisioning-profiles" title="Exporting Provisioning Profiles" class="md-nav__link">
+    Exporting Provisioning Profiles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-using-xcode_1" title="Exporting using Xcode" class="md-nav__link">
+    Exporting using Xcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exporting-manually_1" title="Exporting manually" class="md-nav__link">
+    Exporting manually
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -270,16 +319,63 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exporting-using-xcode-8" title="Exporting using Xcode 8" class="md-nav__link">
-    Exporting using Xcode 8
+  <a href="#exporting-with-codesigndoc" title="Exporting with codesigndoc" class="md-nav__link">
+    Exporting with codesigndoc
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#exporting-certificates" title="Exporting certificates" class="md-nav__link">
+    Exporting certificates
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-using-xcode" title="Exporting using Xcode" class="md-nav__link">
+    Exporting using Xcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exporting-manually" title="Exporting manually" class="md-nav__link">
     Exporting manually
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-provisioning-profiles" title="Exporting Provisioning Profiles" class="md-nav__link">
+    Exporting Provisioning Profiles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-using-xcode_1" title="Exporting using Xcode" class="md-nav__link">
+    Exporting using Xcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exporting-manually_1" title="Exporting manually" class="md-nav__link">
+    Exporting manually
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -300,7 +396,8 @@
                 
                   <h1>Exporting code signing files</h1>
                 
-                <p>The easiest way to collect these files is to use <a href="https://www.bitrise.io">bitrise.io's</a> open source <a href="https://github.com/bitrise-tools/codesigndoc">codesigndoc tool</a>. This tool runs a clean Archive on your Mac, and analyzes the Xcode log output to see which code signing files Xcode used during the Archive.</p>
+                <h2 id="exporting-with-codesigndoc">Exporting with codesigndoc<a class="headerlink" href="#exporting-with-codesigndoc" title="Permanent link">&para;</a></h2>
+<p>The easiest way to collect these files is to use <a href="https://www.bitrise.io">bitrise.io's</a> open source <a href="https://github.com/bitrise-tools/codesigndoc">codesigndoc tool</a>. This tool runs a clean Archive on your Mac, and analyzes the Xcode log output to see which code signing files Xcode used during the Archive.</p>
 <p>For <strong>Xcode projects</strong> use the following command:</p>
 <pre><code>bash -l -c &quot;$(curl -sfL https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap-xcode.sh)&quot;
 </code></pre>
@@ -323,8 +420,63 @@
 <li>Select the one you are using.</li>
 <li>The <code>codesigndoc</code> tool will export all the required code signing files and provisioning profiles for you and open up a Finder window with all of them.</li>
 </ol>
-<h2 id="exporting-using-xcode-8">Exporting using Xcode 8<a class="headerlink" href="#exporting-using-xcode-8" title="Permanent link">&para;</a></h2>
-<h2 id="exporting-manually">Exporting manually<a class="headerlink" href="#exporting-manually" title="Permanent link">&para;</a></h2>
+<h2 id="exporting-certificates">Exporting certificates<a class="headerlink" href="#exporting-certificates" title="Permanent link">&para;</a></h2>
+<h3 id="exporting-using-xcode">Exporting using Xcode<a class="headerlink" href="#exporting-using-xcode" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Start Xcode</li>
+<li>Select Xcode &gt; Preferences from the navigation bar.</li>
+<li>At the top of the window select <code>Accounts</code>.</li>
+<li>Select your Apple ID and your team from the right side bar, then click on <code>View Details...</code>.</li>
+<li>A dialog will appear where you will see your code signing identities and the provisioning profiles.</li>
+<li>Select the certificates and choose <code>Export</code> from the pop-up menu.
+<img alt="Export certificate" src="../img/xcode_export_certificate.png" /></li>
+<li>Enter a filename in the Save As dialog. You can set a password and a verification to store it securely, but it's not necessary.</li>
+<li>Xcode will export the requested certificate in a .p12 format.</li>
+</ol>
+<h3 id="exporting-manually">Exporting manually<a class="headerlink" href="#exporting-manually" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Start Keychain Access.</li>
+<li>On the top left sidebar select <code>login</code> and on the bottom left select <code>My Certificates</code>.</li>
+<li>This will list all your installed certificates and the associated private key.</li>
+<li>Select the one that you would like to export and choose <code>Export</code> from the pop-up menu.
+<img alt="Export certificate" src="../img/keychain_access_export.png" /></li>
+<li>Enter a filename in the Save As dialog. You can set a password and a verification to store it securely, but it's not necessary.</li>
+<li>Keychain Access will export the requested certificate in a .p12 format.</li>
+</ol>
+<h2 id="exporting-provisioning-profiles">Exporting Provisioning Profiles<a class="headerlink" href="#exporting-provisioning-profiles" title="Permanent link">&para;</a></h2>
+<h3 id="exporting-using-xcode_1">Exporting using Xcode<a class="headerlink" href="#exporting-using-xcode_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Start Xcode</li>
+<li>Select Xcode &gt; Preferences from the navigation bar.</li>
+<li>At the top of the window select <code>Accounts</code>.</li>
+<li>Select your Apple ID and your team from the right side bar, then click on <code>View Details...</code>.</li>
+<li>A dialog will appear where you will see your code signing identities and the provisioning profiles.</li>
+<li>Locate the profile that you are looking for under Provisioning Profiles.</li>
+<li>If you don't have it installed on the system, click on the <code>Download</code> button next to it.</li>
+<li>Choose <code>Show in finder</code> from the pop-up menu, that will show you the installed provisioning profile for you.</li>
+</ol>
+<h3 id="exporting-manually_1">Exporting manually<a class="headerlink" href="#exporting-manually_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to <a href="https://developer.apple.com">https://developer.apple.com</a> and log in.</li>
+<li>Select Certificates, Identifiers &amp; Profiles from the left sidebar</li>
+<li>Navigate to Provisioning Profiles &gt; All</li>
+<li>Find the Provisioning Profile you are looking for from the list or use the search to filter it for you.</li>
+<li>Click on the selected Provisioning Profile, this will extend the details.</li>
+<li>If it's status is invalid, you can click on the <code>Edit</code> button and save again.</li>
+<li>Click on the <code>Download</code> button to download it and double click on it to install to your macOS.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also locate all the installed Provisioning Profiles at the following path: <code>~/Library/MobileDevice/Provisioning Profiles/</code>.</p>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Screenshots from https://developer.apple.com/support&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
               
             </article>
           </div>
@@ -391,7 +543,7 @@
     
       <a href="https://github.com/bitrise-io/ioscodesigning.github.io" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://twitter.com/" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/bitrise" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 

@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Code signing is required for iOS apps when you are distributing your app to your testers or to the App Store. It assures that your app can be trusted and is known by Apple.">
+      
       
         <link rel="canonical" href="https://bitrise-io.github.io/ioscodesigning.github.io/generate-code-signing-files/">
       
@@ -217,8 +219,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#generate-a-code-signing-certificate-using-xcode-8" title="Generate a Code Signing Certificate using Xcode 8" class="md-nav__link">
-    Generate a Code Signing Certificate using Xcode 8
+  <a href="#generate-a-code-signing-certificate-using-xcode" title="Generate a Code Signing Certificate using Xcode" class="md-nav__link">
+    Generate a Code Signing Certificate using Xcode
   </a>
   
 </li>
@@ -244,8 +246,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#generate-a-provisioning-profile-with-xcode-8" title="Generate a Provisioning Profile with Xcode 8" class="md-nav__link">
-    Generate a Provisioning Profile with Xcode 8
+  <a href="#generate-a-provisioning-profile-with-xcode" title="Generate a Provisioning Profile with Xcode" class="md-nav__link">
+    Generate a Provisioning Profile with Xcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-a-provisioning-profile-with-xcode" title="Download a Provisioning Profile with Xcode" class="md-nav__link">
+    Download a Provisioning Profile with Xcode
   </a>
   
 </li>
@@ -268,6 +277,13 @@
           <li class="md-nav__item">
   <a href="#generate-a-provisioning-profile_1" title="Generate a Provisioning Profile" class="md-nav__link">
     Generate a Provisioning Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-a-provisioning-profile" title="Download a Provisioning Profile" class="md-nav__link">
+    Download a Provisioning Profile
   </a>
   
 </li>
@@ -338,8 +354,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#generate-a-code-signing-certificate-using-xcode-8" title="Generate a Code Signing Certificate using Xcode 8" class="md-nav__link">
-    Generate a Code Signing Certificate using Xcode 8
+  <a href="#generate-a-code-signing-certificate-using-xcode" title="Generate a Code Signing Certificate using Xcode" class="md-nav__link">
+    Generate a Code Signing Certificate using Xcode
   </a>
   
 </li>
@@ -365,8 +381,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#generate-a-provisioning-profile-with-xcode-8" title="Generate a Provisioning Profile with Xcode 8" class="md-nav__link">
-    Generate a Provisioning Profile with Xcode 8
+  <a href="#generate-a-provisioning-profile-with-xcode" title="Generate a Provisioning Profile with Xcode" class="md-nav__link">
+    Generate a Provisioning Profile with Xcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-a-provisioning-profile-with-xcode" title="Download a Provisioning Profile with Xcode" class="md-nav__link">
+    Download a Provisioning Profile with Xcode
   </a>
   
 </li>
@@ -389,6 +412,13 @@
           <li class="md-nav__item">
   <a href="#generate-a-provisioning-profile_1" title="Generate a Provisioning Profile" class="md-nav__link">
     Generate a Provisioning Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-a-provisioning-profile" title="Download a Provisioning Profile" class="md-nav__link">
+    Download a Provisioning Profile
   </a>
   
 </li>
@@ -421,7 +451,7 @@
                   <h1>Generate code signing files</h1>
                 
                 <h2 id="generate-a-code-signing-certificate">Generate a Code Signing Certificate<a class="headerlink" href="#generate-a-code-signing-certificate" title="Permanent link">&para;</a></h2>
-<h3 id="generate-a-code-signing-certificate-using-xcode-8">Generate a Code Signing Certificate using Xcode 8<a class="headerlink" href="#generate-a-code-signing-certificate-using-xcode-8" title="Permanent link">&para;</a></h3>
+<h3 id="generate-a-code-signing-certificate-using-xcode">Generate a Code Signing Certificate using Xcode<a class="headerlink" href="#generate-a-code-signing-certificate-using-xcode" title="Permanent link">&para;</a></h3>
 <p>First you have to add your Apple ID to Accounts preferences in Xcode. If you are already done with this, you can skip to step 6.</p>
 <ol>
 <li>Start Xcode</li>
@@ -456,7 +486,7 @@
 </ol>
 <h2 id="generate-a-provisioning-profile">Generate a Provisioning Profile<a class="headerlink" href="#generate-a-provisioning-profile" title="Permanent link">&para;</a></h2>
 <p>Provisioning is the process of preparing and configuring an app to launch on devices and to use app services. Development Provisioning Profiles holds the device identifiers ( UUID ) that is eligible to run your app. Distribution Provisioning Profiles can include App Store profiles, that let's you distribute your app to the App Store and Ad-hoc profiles that is good for distributing to your testers.</p>
-<h3 id="generate-a-provisioning-profile-with-xcode-8">Generate a Provisioning Profile with Xcode 8<a class="headerlink" href="#generate-a-provisioning-profile-with-xcode-8" title="Permanent link">&para;</a></h3>
+<h3 id="generate-a-provisioning-profile-with-xcode">Generate a Provisioning Profile with Xcode<a class="headerlink" href="#generate-a-provisioning-profile-with-xcode" title="Permanent link">&para;</a></h3>
 <p>Xcode will automatically generate an App ID for your project, that matches your unique bundle ID for your project. An App ID is used to identify one or more of your apps. It can be an <em>explicit App ID</em> that only matches one unique bundle identifier or a <em>wildcard App ID</em> that can match multiple ones.</p>
 <p>Xcode will also create a <em>Team Provisioning Profile</em> for your project automatically, so you can start deploying to your device automatically.</p>
 <p>If you hit any issues you should make sure that the device is eligible, for example if the device doesn't match the deployment target you will get an error.</p>
@@ -474,6 +504,16 @@
 <p class="admonition-title">Note</p>
 <p>To setup a distribution Provisioning Profile go ahead with the manual setup.</p>
 </div>
+<h3 id="download-a-provisioning-profile-with-xcode">Download a Provisioning Profile with Xcode<a class="headerlink" href="#download-a-provisioning-profile-with-xcode" title="Permanent link">&para;</a></h3>
+<p>If you have already created the Provisioning Profile, you can do the following.</p>
+<ol>
+<li>Start Xcode</li>
+<li>Select Xcode &gt; Preferences from the navigation bar.</li>
+<li>At the top of the window select <code>Accounts</code>.</li>
+<li>Select your Apple ID and your team from the right side bar, then click on <code>View Details...</code>.</li>
+<li>A dialog will appear where you will see your code signing identities and the provisioning profiles.</li>
+<li>Under Provisioning Profiles locate the ones you are looking for and click on the <code>Download</code> button. Xcode will download the profile and move it to it's location automatically.</li>
+</ol>
 <h3 id="generate-a-provisioning-profile-manually">Generate a Provisioning Profile manually<a class="headerlink" href="#generate-a-provisioning-profile-manually" title="Permanent link">&para;</a></h3>
 <h4 id="setup-an-app-id">Setup an App ID<a class="headerlink" href="#setup-an-app-id" title="Permanent link">&para;</a></h4>
 <ol>
@@ -498,6 +538,24 @@
 <li>Name your Provisioning Profile and click continue.</li>
 <li>Your profile is generated. You can download it to your device and double click on it to install to your macOS.</li>
 </ol>
+<h4 id="download-a-provisioning-profile">Download a Provisioning Profile<a class="headerlink" href="#download-a-provisioning-profile" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Go to <a href="https://developer.apple.com">https://developer.apple.com</a> and log in.</li>
+<li>Select Certificates, Identifiers &amp; Profiles from the left sidebar</li>
+<li>Navigate to Provisioning Profiles &gt; All</li>
+<li>Find the Provisioning Profile you are looking for from the list or use the search to filter it for you.</li>
+<li>Click on the selected Provisioning Profile, this will extend the details.</li>
+<li>If it's status is invalid, you can click on the <code>Edit</code> button and save again.</li>
+<li>Click on the <code>Download</code> button to download it and double click on it to install to your macOS.</li>
+</ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Screenshots from https://developer.apple.com/support&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
               
             </article>
           </div>
@@ -564,7 +622,7 @@
     
       <a href="https://github.com/bitrise-io/ioscodesigning.github.io" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://twitter.com/" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/bitrise" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 

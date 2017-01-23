@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Code signing is required for iOS apps when you are distributing your app to your testers or to the App Store. It assures that your app can be trusted and is known by Apple.">
+      
       
         <link rel="canonical" href="https://bitrise-io.github.io/ioscodesigning.github.io/code-signing-ios-frameworks/">
       
@@ -304,7 +306,7 @@
 <p>When you are developing an iOS framework you have to distribute a code signed version of your framework, however you don't need to sign it with your <code>Distribution</code> profile, the <code>Developer</code> profile will be enough.
 After distribution the framework will be re-codesigned by the frameworks' consumer during the code signing process.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
 <p>If you attempt to build it without code signing Xcode won't produce a <code>.framework</code> file and you will receive the following error:</p>
-<pre><code>CodeSign error: code signing is required for product type 'Framework' in SDK 'iOS 8.1'
+<pre><code>CodeSign error: code signing is required for product type 'Framework' in SDK 'iOS 10.2'
 </code></pre>
 
 <h2 id="using-an-ios-framework">Using an iOS framework<a class="headerlink" href="#using-an-ios-framework" title="Permanent link">&para;</a></h2>
@@ -369,7 +371,7 @@ After distribution the framework will be re-codesigned by the frameworks' consum
     
       <a href="https://github.com/bitrise-io/ioscodesigning.github.io" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://twitter.com/" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/bitrise" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 
