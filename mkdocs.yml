@@ -1,7 +1,7 @@
 site_name: 'iOS Code Signing'
 site_description: 'Code signing is required for iOS apps when you are distributing your app to your testers or to the App Store.'
 site_author: 'Bitrise'
-site_url: 'https://bitrise-io.github.io/ioscodesigning'
+site_url: 'https://ioscodesigning.com'
 
 repo_name: 'GitHub'
 repo_url: 'https://github.com/bitrise-io/ioscodesigning'
