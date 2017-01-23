@@ -119,11 +119,6 @@
             "location": "/code-signing-ios-frameworks/#using-an-ios-framework", 
             "text": "As a framework consumer you have to sign the framework during the signing process, otherwise your build will fail.      http://stackoverflow.com/questions/30963294/creating-ios-osx-frameworks-is-it-necessary-to-codesign-them-before-distributin", 
             "title": "Using an iOS framework"
-        }, 
-        {
-            "location": "/robots/", 
-            "text": "", 
-            "title": "robots.txt"
         }
     ]
 }
