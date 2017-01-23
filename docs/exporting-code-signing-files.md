@@ -1,3 +1,5 @@
+## Exporting with codesigndoc
+
 The easiest way to collect these files is to use [bitrise.io's](https://www.bitrise.io) open source [codesigndoc tool](https://github.com/bitrise-tools/codesigndoc). This tool runs a clean Archive on your Mac, and analyzes the Xcode log output to see which code signing files Xcode used during the Archive.
 
 For **Xcode projects** use the following command:
@@ -25,6 +27,51 @@ This will archive your project and locate all the required code signing files an
 5. Select the one you are using.
 6. The `codesigndoc` tool will export all the required code signing files and provisioning profiles for you and open up a Finder window with all of them.
 
-## Exporting using Xcode 8
+## Exporting certificates
 
-## Exporting manually
+### Exporting using Xcode
+1. Start Xcode
+2. Select Xcode > Preferences from the navigation bar.
+3. At the top of the window select `Accounts`.
+4. Select your Apple ID and your team from the right side bar, then click on `View Details...`.
+5. A dialog will appear where you will see your code signing identities and the provisioning profiles.
+6. Select the certificates and choose `Export` from the pop-up menu.
+![Export certificate](img/xcode_export_certificate.png)
+7. Enter a filename in the Save As dialog. You can set a password and a verification to store it securely, but it's not necessary.
+8. Xcode will export the requested certificate in a .p12 format.
+
+### Exporting manually
+1. Start Keychain Access.
+2. On the top left sidebar select `login` and on the bottom left select `My Certificates`.
+3. This will list all your installed certificates and the associated private key.
+4. Select the one that you would like to export and choose `Export` from the pop-up menu.
+![Export certificate](img/keychain_access_export.png)
+7. Enter a filename in the Save As dialog. You can set a password and a verification to store it securely, but it's not necessary.
+8. Keychain Access will export the requested certificate in a .p12 format.
+
+
+## Exporting Provisioning Profiles
+
+### Exporting using Xcode
+1. Start Xcode
+2. Select Xcode > Preferences from the navigation bar.
+3. At the top of the window select `Accounts`.
+4. Select your Apple ID and your team from the right side bar, then click on `View Details...`.
+5. A dialog will appear where you will see your code signing identities and the provisioning profiles.
+6. Locate the profile that you are looking for under Provisioning Profiles.
+7. If you don't have it installed on the system, click on the `Download` button next to it.
+8. Choose `Show in finder` from the pop-up menu, that will show you the installed provisioning profile for you.
+
+### Exporting manually
+1. Go to [https://developer.apple.com](https://developer.apple.com) and log in.
+2. Select Certificates, Identifiers & Profiles from the left sidebar
+3. Navigate to Provisioning Profiles > All
+4. Find the Provisioning Profile you are looking for from the list or use the search to filter it for you.
+5. Click on the selected Provisioning Profile, this will extend the details.
+6. If it's status is invalid, you can click on the `Edit` button and save again.
+7. Click on the `Download` button to download it and double click on it to install to your macOS.
+
+!!! note
+    You can also locate all the installed Provisioning Profiles at the following path: `~/Library/MobileDevice/Provisioning Profiles/`.
+
+[^1]: Screenshots from https://developer.apple.com/support

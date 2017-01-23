@@ -1,5 +1,5 @@
 site_name: 'iOS Code Signing'
-site_description: ''
+site_description: 'Code signing is required for iOS apps when you are distributing your app to your testers or to the App Store. It assures that your app can be trusted and is known by Apple.'
 site_author: 'Bitrise'
 site_url: 'https://bitrise-io.github.io/ioscodesigning.github.io'
 
@@ -27,7 +27,7 @@ extra:
     - type: 'github'
       link: 'https://github.com/bitrise-io/ioscodesigning.github.io'
     - type: 'twitter'
-      link: 'https://twitter.com/'
+      link: 'https://twitter.com/bitrise'
 
 google_analytics:
   - 'UA-XXXXXXXX-X'

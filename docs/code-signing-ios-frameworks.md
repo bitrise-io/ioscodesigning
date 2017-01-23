@@ -7,7 +7,7 @@ After distribution the framework will be re-codesigned by the frameworks' consum
 
 If you attempt to build it without code signing Xcode won't produce a `.framework` file and you will receive the following error:
 ```
-CodeSign error: code signing is required for product type 'Framework' in SDK 'iOS 8.1'
+CodeSign error: code signing is required for product type 'Framework' in SDK 'iOS 10.2'
 ```
 
 ## Using an iOS framework

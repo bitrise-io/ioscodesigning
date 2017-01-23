@@ -1,6 +1,6 @@
 ## Generate a Code Signing Certificate
 
-### Generate a Code Signing Certificate using Xcode 8
+### Generate a Code Signing Certificate using Xcode
 
 First you have to add your Apple ID to Accounts preferences in Xcode. If you are already done with this, you can skip to step 6.
 
@@ -36,7 +36,7 @@ First you have to add your Apple ID to Accounts preferences in Xcode. If you are
 ## Generate a Provisioning Profile
 Provisioning is the process of preparing and configuring an app to launch on devices and to use app services. Development Provisioning Profiles holds the device identifiers ( UUID ) that is eligible to run your app. Distribution Provisioning Profiles can include App Store profiles, that let's you distribute your app to the App Store and Ad-hoc profiles that is good for distributing to your testers.
 
-### Generate a Provisioning Profile with Xcode 8
+### Generate a Provisioning Profile with Xcode
 Xcode will automatically generate an App ID for your project, that matches your unique bundle ID for your project. An App ID is used to identify one or more of your apps. It can be an *explicit App ID* that only matches one unique bundle identifier or a *wildcard App ID* that can match multiple ones.
 
 Xcode will also create a *Team Provisioning Profile* for your project automatically, so you can start deploying to your device automatically.
@@ -54,6 +54,17 @@ Also make sure that your app is connected to the correct Team.
 
 !!! note
     To setup a distribution Provisioning Profile go ahead with the manual setup.
+
+### Download a Provisioning Profile with Xcode
+If you have already created the Provisioning Profile, you can do the following.
+
+1. Start Xcode
+2. Select Xcode > Preferences from the navigation bar.
+3. At the top of the window select `Accounts`.
+6. Select your Apple ID and your team from the right side bar, then click on `View Details...`.
+7. A dialog will appear where you will see your code signing identities and the provisioning profiles.
+8. Under Provisioning Profiles locate the ones you are looking for and click on the `Download` button. Xcode will download the profile and move it to it's location automatically.
+
 
 ### Generate a Provisioning Profile manually
 
@@ -77,3 +88,14 @@ Also make sure that your app is connected to the correct Team.
 8. Select all the devices you would like to use with this profile and click continue.
 9. Name your Provisioning Profile and click continue.
 10. Your profile is generated. You can download it to your device and double click on it to install to your macOS.
+
+#### Download a Provisioning Profile
+1. Go to [https://developer.apple.com](https://developer.apple.com) and log in.
+2. Select Certificates, Identifiers & Profiles from the left sidebar
+3. Navigate to Provisioning Profiles > All
+4. Find the Provisioning Profile you are looking for from the list or use the search to filter it for you.
+5. Click on the selected Provisioning Profile, this will extend the details.
+6. If it's status is invalid, you can click on the `Edit` button and save again.
+7. Click on the `Download` button to download it and double click on it to install to your macOS.
+
+[^1]: Screenshots from https://developer.apple.com/support
