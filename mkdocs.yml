@@ -6,9 +6,10 @@ site_url: 'https://ioscodesigning.com'
 repo_name: 'GitHub'
 repo_url: 'https://github.com/bitrise-io/ioscodesigning'
 
-copyright: 'The iOS Code Signing guide is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.'
-
 theme: 'material'
+theme_dir: 'custom'
+extra_css:
+- 'css/footer.css'
 
 pages:
 - Introduction: 'index.md'
@@ -20,13 +21,6 @@ markdown_extensions:
   - admonition
   - toc(permalink=true)
   - footnotes
-
-extra:
-  social:
-    - type: 'github'
-      link: 'https://github.com/bitrise-io/ioscodesigning'
-    - type: 'twitter'
-      link: 'https://twitter.com/bitrise'
 
 google_analytics:
   - 'UA-53276411-6'

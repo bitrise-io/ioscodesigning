@@ -1,0 +1,69 @@
+.md-bitrise {
+  background-image: url('/img/bitrise.png');
+  background-size: 160px 59px;
+  height: 59px;
+  width: 160px;
+  position: absolute;
+}
+
+.md-footer-bitrise__inner {
+  padding: 1.0rem;
+  overflow: auto;
+  line-height: 2.8;
+  text-align: center;
+}
+.md-grid {
+  max-width: 122rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.md-footer-bitrise {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 auto;
+  display: table;
+  padding: 0 4rem;
+}
+
+.md-footer-bitrise a {
+  background-color: #8151a8;
+  border-radius: .6rem;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  margin: 0 1rem;
+  font-weight: 500;
+  white-space:nowrap;
+}
+
+.md-footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #32eab5;
+}
+
+@media (max-width:1219px) {
+  .md-footer {
+    position: relative;
+  }
+
+  .md-bitrise {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #44bda6;
+  }
+}
+
+.md-footer-copyright {
+  float: right;
+  font-size: 1rem;
+}
+
+.md-main__inner {
+  margin-bottom: 5.6rem;
+}
