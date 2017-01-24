@@ -1,7 +1,7 @@
 .md-bitrise {
   background-image: url('/img/bitrise.png');
   background-size: 160px 59px;
-  height: 59px;
+  height: 60px;
   width: 160px;
   position: absolute;
 }
@@ -9,7 +9,7 @@
 .md-footer-bitrise__inner {
   padding: 1.0rem;
   overflow: auto;
-  line-height: 2.8;
+  line-height: 2.5;
   text-align: center;
 }
 .md-grid {
@@ -18,7 +18,7 @@
   margin-left: auto;
 }
 .md-footer-bitrise {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 800;
   margin: 0 auto;
   display: table;
@@ -44,6 +44,14 @@
   background-color: #32eab5;
 }
 
+.md-main__inner {
+  margin-bottom: 83px;
+}
+
+.csscalc .md-main__inner {
+  min-height: 0;
+}
+
 @media (max-width:1219px) {
   .md-footer {
     position: relative;
@@ -58,13 +66,16 @@
     background-repeat: no-repeat;
     background-color: #44bda6;
   }
+
+  .md-main__inner {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 .md-footer-copyright {
   float: right;
-  font-size: 1rem;
-}
-
-.md-main__inner {
-  margin-bottom: 5.6rem;
+  font-size: 0.8rem;
+  padding: 0;
+  background-color: #000000;
 }
