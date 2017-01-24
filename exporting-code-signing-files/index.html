@@ -411,7 +411,7 @@ src="https://www.facebook.com/tr?id=1527313887281951&ev=PageView&noscript=1"
                   <h1>Exporting code signing files</h1>
                 
                 <h2 id="exporting-with-codesigndoc">Exporting with codesigndoc<a class="headerlink" href="#exporting-with-codesigndoc" title="Permanent link">&para;</a></h2>
-<p>The easiest way to collect these files is to use <a href="https://www.bitrise.io">Bitrise's</a> open source <a href="https://github.com/bitrise-tools/codesigndoc">codesigndoc tool</a>. This tool runs a clean Archive on your Mac, and analyzes the Xcode log output to see which code signing files Xcode used during the Archive.</p>
+<p>The easiest way to collect these files is to use <a href="https://www.bitrise.io/?utm_source=ioscodesigning.com&amp;utm_medium=content&amp;utm_campaign=ios_code_signing&amp;utm_term=ioscodesigning.com/exporting-code-signing-files&amp;utm_content=text">Bitrise's</a> open source <a href="https://github.com/bitrise-tools/codesigndoc">codesigndoc tool</a>. This tool runs a clean Archive on your Mac, and analyzes the Xcode log output to see which code signing files Xcode used during the Archive.</p>
 <p>For <strong>Xcode projects</strong> use the following command:</p>
 <pre><code>bash -l -c &quot;$(curl -sfL https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap-xcode.sh)&quot;
 </code></pre>
@@ -435,7 +435,7 @@ src="https://www.facebook.com/tr?id=1527313887281951&ev=PageView&noscript=1"
 <li>The <code>codesigndoc</code> tool will export all the required code signing files and provisioning profiles for you and open up a Finder window with all of them.</li>
 </ol>
 <div class="admonition success">
-<p class="admonition-title">Success<p>You can upload your code signing files to <a href="https://www.bitrise.io">Bitrise</a> after you're done with the export and manage signing from there automatically, only by selecting targets, or even resigning during a build. <a href="https://www.bitrise.io">Give it a try!</a></p>
+<p class="admonition-title">Success<p>You can upload your code signing files to <a href="https://www.bitrise.io/?utm_source=ioscodesigning.com&amp;utm_medium=content&amp;utm_campaign=ios_code_signing&amp;utm_term=ioscodesigning.com/exporting-code-signing-files&amp;utm_content=text">Bitrise</a> after you're done with the export and manage signing from there automatically, only by selecting targets, or even resigning during a build. <a href="https://www.bitrise.io/?utm_source=ioscodesigning.com&amp;utm_medium=content&amp;utm_campaign=ios_code_signing&amp;utm_term=ioscodesigning.com/exporting-code-signing-files&amp;utm_content=text">Give it a try!</a></p>
 </p>
 </div>
 <h2 id="exporting-certificates">Exporting certificates<a class="headerlink" href="#exporting-certificates" title="Permanent link">&para;</a></h2>
