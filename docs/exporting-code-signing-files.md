@@ -1,6 +1,6 @@
 ## Exporting with codesigndoc
 
-The easiest way to collect these files is to use [Bitrise's](https://www.bitrise.io) open source [codesigndoc tool](https://github.com/bitrise-tools/codesigndoc). This tool runs a clean Archive on your Mac, and analyzes the Xcode log output to see which code signing files Xcode used during the Archive.
+The easiest way to collect these files is to use [Bitrise's](https://www.bitrise.io/?utm_source=ioscodesigning.com&utm_medium=content&utm_campaign=ios_code_signing&utm_term=ioscodesigning.com/exporting-code-signing-files&utm_content=text) open source [codesigndoc tool](https://github.com/bitrise-tools/codesigndoc). This tool runs a clean Archive on your Mac, and analyzes the Xcode log output to see which code signing files Xcode used during the Archive.
 
 For **Xcode projects** use the following command:
 
@@ -28,7 +28,7 @@ This will archive your project and locate all the required code signing files an
 6. The `codesigndoc` tool will export all the required code signing files and provisioning profiles for you and open up a Finder window with all of them.
 
 !!! success
-        You can upload your code signing files to [Bitrise](https://www.bitrise.io) after you're done with the export and manage signing from there automatically, only by selecting targets, or even resigning during a build. [Give it a try!](https://www.bitrise.io)
+        You can upload your code signing files to [Bitrise](https://www.bitrise.io/?utm_source=ioscodesigning.com&utm_medium=content&utm_campaign=ios_code_signing&utm_term=ioscodesigning.com/exporting-code-signing-files&utm_content=text) after you're done with the export and manage signing from there automatically, only by selecting targets, or even resigning during a build. [Give it a try!](https://www.bitrise.io/?utm_source=ioscodesigning.com&utm_medium=content&utm_campaign=ios_code_signing&utm_term=ioscodesigning.com/exporting-code-signing-files&utm_content=text)
 
 ## Exporting certificates
 
