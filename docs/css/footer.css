@@ -44,6 +44,14 @@
   background-color: #32eab5;
 }
 
+.md-main__inner {
+  margin-bottom: 83px;
+}
+
+.csscalc .md-main__inner {
+  min-height: 0;
+}
+
 @media (max-width:1219px) {
   .md-footer {
     position: relative;
@@ -58,13 +66,16 @@
     background-repeat: no-repeat;
     background-color: #44bda6;
   }
+
+  .md-main__inner {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 .md-footer-copyright {
   float: right;
-  font-size: 1rem;
-}
-
-.md-main__inner {
-  margin-bottom: 5.6rem;
+  font-size: 0.8rem;
+  padding: 0;
+  background-color: #000000;
 }
