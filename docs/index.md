@@ -2,7 +2,14 @@ If you are developing an iOS app and you want to test it on a real device or if 
 
 This guide was created to help iOS developers with code signing and to ease the sometimes painful process.
 
-!!! note "Contributing to this guide"
-    This guide is open source, you can find the sources in GitHub, just simply select the GitHub repo from the top right corner or click on the pencil icon on every page to edit it's contents.
+## Contents
+Here are a couple of links to get you started
 
-    If you find a typo, would like to add or modify a content, feel free to update it on GitHub and to send a PR.
+* [Generate code signing files](/generate-code-signing-files)
+* [Exporting code signing files](/exporting-code-signing-files)
+* [Code signing iOS frameworks](/code-signing-ios-frameworks)
+
+## Contribution 😎
+This guide is open source, you can find the sources on [GitHub](https://github.com/bitrise-io/ioscodesigning), just simply select the GitHub repo from the top right corner or click on the pencil icon on any page to edit it's contents.
+
+If you find a typo, would like to add or modify a content, feel free to update it and to send a PR.
