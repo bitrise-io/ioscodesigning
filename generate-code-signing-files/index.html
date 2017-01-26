@@ -461,10 +461,20 @@ src="https://www.facebook.com/tr?id=1527313887281951&ev=PageView&noscript=1"
                  <a href="https://github.com/bitrise-io/ioscodesigning/edit/master/docs/generate-code-signing-files.md" title="Edit this page" class="md-icon md-content__edit">edit</a>
                
               
-                
-                  <h1>Generate code signing files</h1>
-                
-                <p>You'll need two kinds of files to sign your app: Certificates and Provisioning Profiles.</p>
+  <!--
+    This is a nasty hack that checks whether the content contains
+    a h1 headline. If it doesn't, the page title (or respectively
+    site name) is used as the main headline.
+  -->
+  
+    <h1>
+      Generate code signing files
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="Generate code signing files - iOS Code Signing" data-url="https://ioscodesigning.com/generate-code-signing-files/" data-via="bitrise" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </h1>
+  
+
+  <!-- Content -->
+  <p>You'll need two kinds of files to sign your app: Certificates and Provisioning Profiles.</p>
 <h2 id="generate-a-code-signing-certificate">Generate a Code Signing Certificate<a class="headerlink" href="#generate-a-code-signing-certificate" title="Permanent link">&para;</a></h2>
 <p>The certificates - development or distribution - are the guarantee that you, the named developer, built this code, that you are a member of the developer program, and that Apple have issued you with a certificate to do so.</p>
 <p>To get a certificate, you need to generate a Certificate Signing Request with Keychain Access and send it to Apple. This will create a public/private key for you if you don't have one already. Apple will then verify the information, and create a certificate for you.</p>
@@ -573,7 +583,7 @@ src="https://www.facebook.com/tr?id=1527313887281951&ev=PageView&noscript=1"
 </li>
 </ol>
 </div>
-              
+
             </article>
           </div>
         </div>

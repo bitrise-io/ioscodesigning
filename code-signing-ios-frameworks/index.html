@@ -313,10 +313,20 @@ src="https://www.facebook.com/tr?id=1527313887281951&ev=PageView&noscript=1"
                  <a href="https://github.com/bitrise-io/ioscodesigning/edit/master/docs/code-signing-ios-frameworks.md" title="Edit this page" class="md-icon md-content__edit">edit</a>
                
               
-                
-                  <h1>Code signing iOS frameworks</h1>
-                
-                <h2 id="developing-ios-frameworks">Developing iOS frameworks<a class="headerlink" href="#developing-ios-frameworks" title="Permanent link">&para;</a></h2>
+  <!--
+    This is a nasty hack that checks whether the content contains
+    a h1 headline. If it doesn't, the page title (or respectively
+    site name) is used as the main headline.
+  -->
+  
+    <h1>
+      Code signing iOS frameworks
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="Code signing iOS frameworks - iOS Code Signing" data-url="https://ioscodesigning.com/code-signing-ios-frameworks/" data-via="bitrise" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </h1>
+  
+
+  <!-- Content -->
+  <h2 id="developing-ios-frameworks">Developing iOS frameworks<a class="headerlink" href="#developing-ios-frameworks" title="Permanent link">&para;</a></h2>
 <p>When you are developing an iOS framework you have to distribute a code signed version of your framework, however you don't need to sign it with your <code>Distribution</code> profile, the <code>Developer</code> profile will be enough.
 After distribution the framework will be re-codesigned by the frameworks' consumer during the code signing process.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
 <p>If you attempt to build it without code signing Xcode won't produce a <code>.framework</code> file and you will receive the following error:</p>
@@ -333,7 +343,7 @@ After distribution the framework will be re-codesigned by the frameworks' consum
 </li>
 </ol>
 </div>
-              
+
             </article>
           </div>
         </div>

@@ -407,10 +407,20 @@ src="https://www.facebook.com/tr?id=1527313887281951&ev=PageView&noscript=1"
                  <a href="https://github.com/bitrise-io/ioscodesigning/edit/master/docs/exporting-code-signing-files.md" title="Edit this page" class="md-icon md-content__edit">edit</a>
                
               
-                
-                  <h1>Exporting code signing files</h1>
-                
-                <h2 id="exporting-with-codesigndoc">Exporting with codesigndoc<a class="headerlink" href="#exporting-with-codesigndoc" title="Permanent link">&para;</a></h2>
+  <!--
+    This is a nasty hack that checks whether the content contains
+    a h1 headline. If it doesn't, the page title (or respectively
+    site name) is used as the main headline.
+  -->
+  
+    <h1>
+      Exporting code signing files
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="Exporting code signing files - iOS Code Signing" data-url="https://ioscodesigning.com/exporting-code-signing-files/" data-via="bitrise" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </h1>
+  
+
+  <!-- Content -->
+  <h2 id="exporting-with-codesigndoc">Exporting with codesigndoc<a class="headerlink" href="#exporting-with-codesigndoc" title="Permanent link">&para;</a></h2>
 <p>The easiest way to collect these files is to use <a href="https://www.bitrise.io/?utm_source=ioscodesigning.com&amp;utm_medium=content&amp;utm_campaign=ios_code_signing&amp;utm_term=ioscodesigning.com/exporting-code-signing-files&amp;utm_content=text">Bitrise's</a> open source <a href="https://github.com/bitrise-tools/codesigndoc">codesigndoc tool</a>. This tool runs a clean Archive on your Mac, and analyzes the Xcode log output to see which code signing files Xcode used during the Archive.</p>
 <p>For <strong>Xcode projects</strong> use the following command:</p>
 <pre><code>bash -l -c &quot;$(curl -sfL https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap-xcode.sh)&quot;
@@ -495,7 +505,7 @@ src="https://www.facebook.com/tr?id=1527313887281951&ev=PageView&noscript=1"
 </li>
 </ol>
 </div>
-              
+
             </article>
           </div>
         </div>
