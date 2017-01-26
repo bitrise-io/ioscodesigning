@@ -5,7 +5,7 @@ This guide was created to help iOS developers with code signing and to ease the 
 ## Contents
 Here are a couple of links to get you started
 
-* [Generate code signing files](/generate-code-signing-files)
+* [Generating code signing files](/generating-code-signing-files)
 * [Exporting code signing files](/exporting-code-signing-files)
 * [Code signing iOS frameworks](/code-signing-ios-frameworks)
 

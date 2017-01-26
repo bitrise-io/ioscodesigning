@@ -15,6 +15,9 @@
 
   <!-- Content -->
   {{ page.content }}
+
+  <hr />
+  <a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }} - {{ site_name }}" data-url="{{ canonical_url }}" data-via="bitrise" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endblock %}
 
 {% block extrahead %}

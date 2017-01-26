@@ -13,7 +13,7 @@ extra_css:
 
 pages:
 - Introduction: 'index.md'
-- Generate code signing files: 'generate-code-signing-files.md'
+- Generating code signing files: 'generating-code-signing-files.md'
 - Exporting code signing files: 'exporting-code-signing-files.md'
 - Code signing iOS frameworks: 'code-signing-ios-frameworks.md'
 
