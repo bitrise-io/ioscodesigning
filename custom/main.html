@@ -1,5 +1,22 @@
 {% extends "base.html" %}
 
+{% block content %}
+  <!--
+    This is a nasty hack that checks whether the content contains
+    a h1 headline. If it doesn't, the page title (or respectively
+    site name) is used as the main headline.
+  -->
+  {% if not "\x3ch1 id=" in page.content %}
+    <h1>
+      {{ page.title | default(config.site_name, true)}}
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }} - {{ site_name }}" data-url="{{ canonical_url }}" data-via="bitrise" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </h1>
+  {% endif %}
+
+  <!-- Content -->
+  {{ page.content }}
+{% endblock %}
+
 {% block extrahead %}
 <!-- Facebook Pixel Code -->
 <script>

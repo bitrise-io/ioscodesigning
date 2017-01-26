@@ -1,3 +1,7 @@
+h1 iframe {
+  margin-left: 10px;
+}
+
 .md-bitrise {
   background-image: url('/img/bitrise.png');
   background-size: 160px 59px;
