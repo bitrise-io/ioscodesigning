@@ -67,10 +67,8 @@ If you have already created the Provisioning Profile, you can do the following.
 1. Start Xcode
 2. Select Xcode > Preferences from the navigation bar.
 3. At the top of the window select `Accounts`.
-6. Select your Apple ID and your team from the right side bar, then click on `View Details...`.
-7. A dialog will appear where you will see your code signing identities and the provisioning profiles.
-8. Under Provisioning Profiles locate the ones you are looking for and click on the `Download` button. Xcode will download the profile and move it to its location automatically.
-
+4. Select your Apple ID and your team, then select `Download Manual Profiles`.
+5. Go to `~/Library/MobileDevice/Provisioning Profiles/` and your profiles should be there.
 
 ### Generate a Provisioning Profile manually
 
