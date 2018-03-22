@@ -34,44 +34,15 @@ workflows:
             mkdocs gh-deploy
 
             # Reset credentials
+            set +x
+            set -v
             curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONEID}/purge_cache" \
             -H "X-Auth-Email: ${CLOUDFLARE_EMAIL}" \
             -H "X-Auth-Key: ${CLOUDFLARE_KEY}" \
             -H "Content-Type: application/json" \
             --data '{"purge_everything":true}'
-  generate-api-docs:
-    steps:
-    - script@1.1.4:
-        title: gen api docs
-        deps:
-          brew:
-          - name: go
-          apt_get:
-          - name: golang
-            bin_name: go
-        inputs:
-        - content: |-
-            #!/bin/bash
-            set -ex
-            # generate gotgen config
-            go run _scripts/gen_api_docs_gotgen_config.go
-            # move it into docs/api
-            api_docs_dir_pth="./docs/api"
-            mv ./gg.conf.json "${api_docs_dir_pth}/gg.conf.json"
-            # run gotgen there
-            go get -u -v github.com/bitrise-tools/gotgen
-            cd "${api_docs_dir_pth}"
-            gotgen generate
   setup:
     steps:
-    - script:
-        inputs:
-        - content: |-
-            #!/bin/bash
-            set -ex
-            if [[ "$(uname)" == "Linux" ]] ; then
-              sudo apt-get update
-            fi
     - script:
         deps:
           brew:
