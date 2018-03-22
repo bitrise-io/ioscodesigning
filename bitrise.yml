@@ -1,0 +1,119 @@
+format_version: 5
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+description: |
+  Official guides: http://www.mkdocs.org
+workflows:
+  ci:
+    before_run:
+    - setup
+    steps:
+    - script:
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            mkdocs build
+  deploy-to-github-pages:
+    before_run:
+    - setup
+    envs:
+    - DEVCENTER_CNAME_URL: devcenter.bitrise.io
+    steps:
+    - script:
+        description: |
+          Note: mkdocs builds into `./site/`
+
+          Official GitHub Pages deploy guide: https://help.github.com/articles/creating-project-pages-manually/
+
+          *You can find infos about how to initialize the required `gh-pages` branch
+          in the official guide.*
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            rm -rf ./site
+            REPO_URL=$(git remote get-url origin)
+            git clone --branch gh-pages "$REPO_URL" ./site
+            mkdocs build --clean
+            cd site/
+            # github pages - cname file
+            echo "$DEVCENTER_CNAME_URL" > CNAME
+            # timestamp - so that we always have a git change
+            date > build-date.log
+            #
+            git config --global user.email "letsconnect@bitrise.io"
+            git config --global user.name "Bitrise Bot"
+            git add .
+            git commit -m 'deploy - [skip ci] for gh-pages branch'
+            git push origin gh-pages
+  generate-api-docs:
+    steps:
+    - script@1.1.4:
+        title: gen api docs
+        deps:
+          brew:
+          - name: go
+          apt_get:
+          - name: golang
+            bin_name: go
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            # generate gotgen config
+            go run _scripts/gen_api_docs_gotgen_config.go
+            # move it into docs/api
+            api_docs_dir_pth="./docs/api"
+            mv ./gg.conf.json "${api_docs_dir_pth}/gg.conf.json"
+            # run gotgen there
+            go get -u -v github.com/bitrise-tools/gotgen
+            cd "${api_docs_dir_pth}"
+            gotgen generate
+  setup:
+    steps:
+    - script:
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            if [[ "$(uname)" == "Linux" ]] ; then
+              sudo apt-get update
+            fi
+    - script:
+        deps:
+          brew:
+          - name: python
+            bin_name: pip
+          apt_get:
+          - name: python-pip
+          - name: python-dev
+          - name: build-essential
+        inputs:
+        - content: |
+            #!/bin/bash
+            set -ex
+
+            sudocmd=""
+            if [[ "$(uname)" == "Linux" ]] ; then
+              sudocmd="sudo"
+            fi
+            pipcmd="pip"
+            if [[ "$(uname)" == "Darwin" ]] ; then
+              pipcmd="pip3"
+            fi
+
+            # On Linux, with apt installed python / python-pip
+            # these commands have to be performed with `sudo`!
+            ${sudocmd} ${pipcmd} install --upgrade pip
+            ${sudocmd} ${pipcmd} install --upgrade virtualenv
+            ${sudocmd} ${pipcmd} install -r requirements.txt
+            mkdocs --version
+            ${pipcmd} show mkdocs-material
+  up:
+    steps:
+    - script:
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            mkdocs serve
