@@ -1,0 +1,112 @@
+format_version: 5
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+description: |
+  Official guides: http://www.mkdocs.org
+workflows:
+  ci:
+    before_run:
+    - setup
+    steps:
+    - script:
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            mkdocs build
+  deploy-to-github-pages:
+    before_run:
+    - setup
+    steps:
+    - script:
+        description: |
+          Note: mkdocs builds into `./site/`
+
+          Official GitHub Pages deploy guide: https://help.github.com/articles/creating-project-pages-manually/
+
+          *You can find infos about how to initialize the required `gh-pages` branch
+          in the official guide.*
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            # Build & Deploy
+            mkdocs build --clean
+            mkdocs gh-deploy
+
+            # Reset credentials
+            curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONEID}/purge_cache" \
+            -H "X-Auth-Email: ${CLOUDFLARE_EMAIL}" \
+            -H "X-Auth-Key: ${CLOUDFLARE_KEY}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}'
+  generate-api-docs:
+    steps:
+    - script@1.1.4:
+        title: gen api docs
+        deps:
+          brew:
+          - name: go
+          apt_get:
+          - name: golang
+            bin_name: go
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            # generate gotgen config
+            go run _scripts/gen_api_docs_gotgen_config.go
+            # move it into docs/api
+            api_docs_dir_pth="./docs/api"
+            mv ./gg.conf.json "${api_docs_dir_pth}/gg.conf.json"
+            # run gotgen there
+            go get -u -v github.com/bitrise-tools/gotgen
+            cd "${api_docs_dir_pth}"
+            gotgen generate
+  setup:
+    steps:
+    - script:
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            if [[ "$(uname)" == "Linux" ]] ; then
+              sudo apt-get update
+            fi
+    - script:
+        deps:
+          brew:
+          - name: python
+            bin_name: pip
+          apt_get:
+          - name: python-pip
+          - name: python-dev
+          - name: build-essential
+        inputs:
+        - content: |
+            #!/bin/bash
+            set -ex
+
+            sudocmd=""
+            if [[ "$(uname)" == "Linux" ]] ; then
+              sudocmd="sudo"
+            fi
+            pipcmd="pip"
+            if [[ "$(uname)" == "Darwin" ]] ; then
+              pipcmd="pip3"
+            fi
+
+            # On Linux, with apt installed python / python-pip
+            # these commands have to be performed with `sudo`!
+            ${sudocmd} ${pipcmd} install --upgrade pip
+            ${sudocmd} ${pipcmd} install --upgrade virtualenv
+            ${sudocmd} ${pipcmd} install -r requirements.txt
+            mkdocs --version
+            ${pipcmd} show mkdocs-material
+  up:
+    steps:
+    - script:
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            mkdocs serve
