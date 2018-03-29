@@ -16,6 +16,7 @@ pages:
 - Generating code signing files: 'generating-code-signing-files.md'
 - Exporting code signing files: 'exporting-code-signing-files.md'
 - Code signing iOS frameworks: 'code-signing-ios-frameworks.md'
+- Code signing iOS for Ionic Projects: 'code-signing-for-ionic.md'
 
 markdown_extensions:
   - admonition
